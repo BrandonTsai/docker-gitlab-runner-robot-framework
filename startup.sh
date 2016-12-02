@@ -1,0 +1,3 @@
+#!/bin/bash 
+
+Xvfb :99 -ac -screen 0 1024x768x8 > /tmp/xvfb.log 2>&1 &
