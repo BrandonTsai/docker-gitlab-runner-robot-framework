@@ -51,9 +51,15 @@ RUN ls
 RUN python setup.py install
 RUN pip install "selenium == 2.53.1"
 
+# Install webapp testing environment
+WORKDIR /root/
+RUN apt-get update && apt-get install -qqy \
+	nodejs-legacy npm
+
 
 # Gitlab-ci runer setting
 ADD register-gitlab.sh /root/
-WORKDIR /root/
-
 ADD startup.sh /root/
+
+
+
